@@ -30,5 +30,11 @@ class LeaveTypeSeeder extends Seeder
             'description' => 'Sick Leave with mc',
             'eligible_days' => 10,
         ]);
+
+        LeaveType::Create([
+            'name' => 'maternity leave ',
+            'description' => 'leave for maternity',
+            'eligible_days' => 10,
+        ]);
     }
 }

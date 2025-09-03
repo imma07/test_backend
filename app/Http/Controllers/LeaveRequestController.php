@@ -29,7 +29,20 @@ class LeaveRequestController extends Controller
      */
     public function store(StoreleaveRequestRequest $request)
     {
-        //
+        $leaveRequest = leaveRequest::create([
+            'user_id' => Auth::id(),
+            'leave_type_id' => $request->leave_type_id,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'reason' => $request->reason,
+        ]);
+
+        $leaveBalance =
+
+        return response()->json([
+            'message' => 'Leave Request created successfully.',
+            'leaveRequest'    => $leaveRequest,
+        ]);
     }
 
     /**

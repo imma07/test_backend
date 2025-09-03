@@ -22,7 +22,10 @@ class StoreleaveRequestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'leave_type_id' => 'required|exists:leave_types,id',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'reason' => 'required',
         ];
     }
 }

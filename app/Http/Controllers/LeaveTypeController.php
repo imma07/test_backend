@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\leaveType;
 use App\Http\Requests\StoreleaveTypeRequest;
 use App\Http\Requests\UpdateleaveTypeRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LeaveTypeController extends Controller
 {
@@ -13,7 +14,11 @@ class LeaveTypeController extends Controller
      */
     public function index()
     {
-        //
+        $leaveTypes = leaveType::all();
+        return response()->json([
+            'message' => 'Leave Types retrieved successfully.',
+            'leaveTypes'    => $leaveTypes,
+        ]);
     }
 
     /**

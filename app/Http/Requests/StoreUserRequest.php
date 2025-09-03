@@ -34,8 +34,6 @@ class StoreUserRequest extends FormRequest
             ],
             'password'   => ['required', 'confirmed', Password::defaults()],
             'password_confirmation' => ['required'],
-            'address' => 'required',
-            'phone' => 'required',
         ];
     }
 }
