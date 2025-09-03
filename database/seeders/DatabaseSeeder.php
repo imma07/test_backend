@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
+            LeaveTypeSeeder::class,
+            leaveRequestSeeder::class,
+            LeaveHistorySeeder::class,
         ]);
     }
 }
